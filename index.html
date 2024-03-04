@@ -38,10 +38,15 @@
                 .accentPalette('red');
     });
 </script>
+<style>
+	body{
+		color: wheat;
+	}
+</style>
 </head>
 
-<body style="background-color: #f2f2f2;" ng-app="starterApp" ng-controller="UserController as ul">
-<md-toolbar class="md-toolbar-tools" id="main">
+<body style="background-color:#242424;" ng-app="starterApp" ng-controller="UserController as ul">
+<md-toolbar class="md-toolbar-tools" id="main" style="color: wheat; background-color: #242424;">
 	<md-button class="md-icon-button" hide-gt-md ng-click="ul.toggleList()" aria-label="Show User List">
 		<md-icon md-svg-icon="menu" ></md-icon>
 	</md-button>
@@ -54,25 +59,25 @@
 		<md-icon md-svg-icon="fullscreen"></md-icon>
 	</md-button>
 </md-toolbar>
-<md-content flex layout="row" style="background-color: #f2f2f2;">
-	<md-content  id="content" layout="column"  style="background-color: #f2f2f2;" md-swipe-right="toggleSidenav()">        
+<md-content flex layout="row" style="background-color: #242424; color: wheat;" >
+	<md-content  id="content" layout="column"  style="background-color: #242424; color: wheat;" md-swipe-right="toggleSidenav()">        
 		<canvas id="demoCanvas" width="700" height="700" align="center" layout-fill experiment></canvas>
 		<md-content ng-show="showgraph" id="graphDiv" layout-xs ng-hide="divshow" class="md-default-theme" aria-hidden="false" style="">
 		</md-content>
 		<div id="Copyright" layout="row" layout-align="center end">{{copyright}}</div>         
     </md-content>
-    <md-sidenav class="site-sidenav md-sidenav-left" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" md-swipe-left="toggleSidenav()">
+    <md-sidenav class="site-sidenav md-sidenav-left" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" md-swipe-left="toggleSidenav()" style="background-color: #242424; color: wheat;">
     <div>  
-	<md-button id="variables" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle1()">{{variables}} <span aria-hidden="true">
+	<md-button id="variables" class="md-raised md-primary toolbarbutton subTitle" ng-click="toggle1()" style="background-color: #2d2d2d; color: wheat;">{{variables}} <span aria-hidden="true">
 	<md-icon md-svg-src="md-toggle-arrow"  aria-hidden="true" ng-animate="{enter: 'rotate', leave: 'rotateCounterwise'}" ng-class="{true: 'rotate', false: 'rotateCounterwise'}[isActive1]" ></md-icon>
 </span> </md-button> 
       
     <!-- //////////// -->  
 	    <!-- Insert dropdown box -->
-		<div ng-hide="showVariables" class="div">
+		<div ng-hide="showVariables" class="div" style="background-color: #2d2d2d; color: wheat;">
 
-		<md-content id="material_list" class="md-title selectable ng-binding md-default-theme" layout-padding="">{{choose_material_list}}</md-content>
-		<md-content class="md-padding" >
+		<md-content id="material_list" class="md-title selectable ng-binding md-default-theme" layout-padding="" style="background-color: #2d2d2d; color: wheat;">{{choose_material_list}}</md-content>
+		<md-content class="md-padding"  style="background-color: #2d2d2d; color: wheat;">
 			<md-select  ng-disabled="" ng-model="PhotoelectricModel" ng-change="changePhotoelectric()">
 			<md-option ng-repeat="x in photoelectric_array" value="{{ x.type }}">{{ x.photoelectric }}</md-option>
 			</md-select>
@@ -80,25 +85,25 @@
 		 
 		<div ng-hide="showVariables" class="div">
 			<!-- Insert slider1 label -->
-			<md-content class="md-title" ng-model="Areaofplate" layout-padding id="Areaofplate">{{area_of_plate}} : {{area_num}} {{centimeter}}<sup>2</sup></md-content>
+			<md-content class="md-title" ng-model="Areaofplate" layout-padding id="Areaofplate"  style="background-color: #2d2d2d; color: wheat;">{{area_of_plate}} : {{area_num}} {{centimeter}}<sup>2</sup></md-content>
 			<!-- Insert slider1 -->
 			<div layout>
 			<md-slider flex ng-disabled="control_disable" ng-change="changeAreaofplate()" ng-model="areaofNum" step="0.1" min="0.1" max="0.5" aria-label="rating"></md-slider>
 			</div>
 			<!-- Insert slider2 label -->
-			<md-content class="md-title" ng-model="Intensityoflight" layout-padding id="CycleNumber">{{intensity_of_light}} : {{intensity_light}} {{woltmeter}}<sup>2</sup></md-content>
+			<md-content class="md-title" ng-model="Intensityoflight" layout-padding id="CycleNumber"  style="background-color: #2d2d2d; color: wheat;">{{intensity_of_light}} : {{intensity_light}} {{woltmeter}}<sup>2</sup></md-content>
 			<!-- Insert slider2 -->
 			<div layout>
 			<md-slider flex ng-disabled="control_disable" ng-change="changeIntensityoflight()" ng-model="intensityoflight" step="5" min="5" max="30" aria-label="rating"></md-slider>
 			</div>
 			<!-- Insert slider3 label -->
-			<md-content class="md-title" ng-model="Voltageapplied" layout-padding id="VoltageApplied">{{voltage_applied}} : {{voltage_app}} {{volt}}</md-content>
+			<md-content class="md-title" ng-model="Voltageapplied" layout-padding id="VoltageApplied"  style="background-color: #2d2d2d; color: wheat;">{{voltage_applied}} : {{voltage_app}} {{volt}}</md-content>
 			<!-- Insert slider3 -->
 			<div layout>
 			<md-slider flex ng-disabled="control_disable" ng-change="changeVoltageapplied()" ng-model="voltageapplied" step="0.1" min="-10" max="0" aria-label="rating"></md-slider>
 			</div>
 			<!-- Insert slider4 label -->
-			<md-content class="md-title" ng-model="Wavelengthoflight" layout-padding id="Wavelengthoflight">{{Wavelength_of_Light}} : {{wavelength_light}} {{wavelength}}</md-content>
+			<md-content class="md-title" ng-model="Wavelengthoflight" layout-padding id="Wavelengthoflight"  style="background-color: #2d2d2d; color: wheat;">{{Wavelength_of_Light}} : {{wavelength_light}} {{wavelength}}</md-content>
 			<!-- Insert slider4 -->
 			<div layout>
 			<md-slider flex ng-disabled="control_disable" ng-change="changeWavelengthoflight()" ng-model="wavelengthoflight" step="2" min="100" max="750" aria-label="rating"></md-slider>
@@ -106,12 +111,12 @@
 		
 		<!-- Switch button -->
         <section layout="row" layout-align="center center">
-            <md-button class="md-raised" ng-disabled="switchon_disable" ng-model="switchon" id="switchon" ng-click="switchon();" >{{switchon_txt}}</md-button>
+            <md-button class="md-raised" ng-disabled="switchon_disable" ng-model="switchon" id="switchon" ng-click="switchon();"  style="background-color: black; color: wheat;">{{switchon_txt}}</md-button>
         </section>
 		
 		<!-- Reset button -->
 		<section layout="row" layout-align="center center">
-            <md-button class="md-raised" ng-disabled="reset_disable" ng-model="Reset" id="reset" ng-click="resetExperiment();" >{{reset_txt}}</md-button>
+            <md-button class="md-raised" ng-disabled="reset_disable" ng-model="Reset" id="reset" ng-click="resetExperiment();"  style="background-color: black; color: wheat;">{{reset_txt}}</md-button>
         </section>		
 		</div>
 		</div>
